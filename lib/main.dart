@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive/hive.dart';
 import 'package:shop_lite_premium/core/localization/language_cubit.dart';
 import 'package:shop_lite_premium/core/localization/language_storage.dart';
-import 'package:shop_lite_premium/features/auth/presentation/views/login_view.dart';
+import 'package:shop_lite_premium/features/product/presentation/views/product_view.dart';
 
+import 'core/theme/app_colors.dart';
 import 'core/utils/constant.dart';
+import 'features/auth/presentation/views/views/auth_parent.dart';
 import 'l10n/app_localizations.dart';
 
 Future<void> main() async {
@@ -33,9 +36,14 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             locale: locale,
             debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              scaffoldBackgroundColor: AppColors.backgroundCanvasLight,
+            ),
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
-            home: LoginView(),
+            home: Hive.box<String>(Constant.uidBox).containsKey(Constant.uidBox)
+                ? ProductView()
+                : AuthParent(),
           );
         },
       ),

@@ -103,6 +103,162 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'English'**
   String get language;
+
+  /// No description provided for @shop.
+  ///
+  /// In en, this message translates to:
+  /// **'Shop'**
+  String get shop;
+
+  /// No description provided for @lite.
+  ///
+  /// In en, this message translates to:
+  /// **'Lite'**
+  String get lite;
+
+  /// No description provided for @welcome.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome back.'**
+  String get welcome;
+
+  /// No description provided for @welcomeSubTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your everyday favorites are waiting.'**
+  String get welcomeSubTitle;
+
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'Email address.'**
+  String get email;
+
+  /// No description provided for @emailHint.
+  ///
+  /// In en, this message translates to:
+  /// **'hello@example.com'**
+  String get emailHint;
+
+  /// No description provided for @password.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get password;
+
+  /// No description provided for @passwordHint.
+  ///
+  /// In en, this message translates to:
+  /// **'••••••••'**
+  String get passwordHint;
+
+  /// No description provided for @forgotPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot password?'**
+  String get forgotPassword;
+
+  /// No description provided for @login.
+  ///
+  /// In en, this message translates to:
+  /// **'Log in'**
+  String get login;
+
+  /// No description provided for @continueWith.
+  ///
+  /// In en, this message translates to:
+  /// **'or continue with'**
+  String get continueWith;
+
+  /// No description provided for @google.
+  ///
+  /// In en, this message translates to:
+  /// **'Google'**
+  String get google;
+
+  /// No description provided for @facebook.
+  ///
+  /// In en, this message translates to:
+  /// **'Facebook'**
+  String get facebook;
+
+  /// No description provided for @newToShopLite.
+  ///
+  /// In en, this message translates to:
+  /// **'New to ShopLite?'**
+  String get newToShopLite;
+
+  /// No description provided for @createAnAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Create an account'**
+  String get createAnAccount;
+
+  /// No description provided for @alreadyHaveAnAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account?'**
+  String get alreadyHaveAnAccount;
+
+  /// No description provided for @createAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Create account'**
+  String get createAccount;
+
+  /// No description provided for @makeYour.
+  ///
+  /// In en, this message translates to:
+  /// **'Make yourself at home.'**
+  String get makeYour;
+
+  /// No description provided for @makeYourSubTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Good finds start with a simple sign-up.'**
+  String get makeYourSubTitle;
+
+  /// No description provided for @fullName.
+  ///
+  /// In en, this message translates to:
+  /// **'Full name'**
+  String get fullName;
+
+  /// No description provided for @policy.
+  ///
+  /// In en, this message translates to:
+  /// **'By signing up, you agree to our Terms of Service and Privacy Policy.'**
+  String get policy;
+
+  /// No description provided for @resetPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset password'**
+  String get resetPassword;
+
+  /// No description provided for @forgotPasswordSubTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No worries. Enter the email linked to your account and we’ll send you a reset link.'**
+  String get forgotPasswordSubTitle;
+
+  /// No description provided for @checkYourEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Check your inbox and spam folder after sending.'**
+  String get checkYourEmail;
+
+  /// No description provided for @backToLogIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to log in'**
+  String get backToLogIn;
+
+  /// No description provided for @sendResetLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Send reset link'**
+  String get sendResetLink;
 }
 
 class _AppLocalizationsDelegate

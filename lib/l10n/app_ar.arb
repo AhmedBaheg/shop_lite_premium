@@ -1,4 +1,6 @@
 {
   "@@locale": "ar",
-  "language": "عربي"
+  "language": "عربي",
+  "shop": "شوب",
+  "lite": "لايت"
 }

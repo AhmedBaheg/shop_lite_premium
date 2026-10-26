@@ -8,21 +8,25 @@ import '../../simple_bloc_observer.dart';
 
 class Constant {
   static const String langBox = "lang_box";
+  static const String uidBox = "uid_box";
 
   static Future<void> setUp() async {
     WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
 
     await Hive.initFlutter();
 
     // To register my model adapter
     // Hive.registerAdapter(NoteModelAdapter());
-
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
     Bloc.observer = SimpleBlocObserver();
 
+    if (!Hive.isBoxOpen(langBox)) {
       await Hive.openBox<String>(langBox);
-
+    }
+    if (!Hive.isBoxOpen(uidBox)) {
+      await Hive.openBox<String>(uidBox);
+    }
   }
 }
