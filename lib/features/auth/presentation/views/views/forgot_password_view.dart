@@ -42,7 +42,7 @@ class ForgotPasswordView extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-              localization!.resetPassword, style: AppTextStyles.headlineMedium),
+              localization!.resetPassword, style: AppTextStyles.headlineMedium(context)),
           backgroundColor: AppColors.backgroundCanvasLight,
         ),
         body: SingleChildScrollView(
@@ -103,9 +103,7 @@ class ForgotPasswordView extends StatelessWidget {
                   SizedBox(height: 28),
                   Text(
                     localization.checkYourEmail,
-                    style: AppTextStyles.bodySmall.copyWith(
-                      color: AppColors.textSecondaryLight,
-                    ),
+                    style: AppTextStyles.bodySmall(context, color: AppColors.textSecondaryLight,),
                   ),
                   SizedBox(height: 250),
                   Align(
@@ -116,7 +114,7 @@ class ForgotPasswordView extends StatelessWidget {
                       },
                       child: Text(
                         localization.backToLogIn,
-                        style: AppTextStyles.link,
+                        style: AppTextStyles.link(context),
                       ),
                     ),
                   ),

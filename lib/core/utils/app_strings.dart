@@ -10,4 +10,9 @@ class AppStrings {
   static const String facebookIcon = "assets/icons/facebook.svg";
   static const String userIcon = "assets/icons/user-round.svg";
   static const String keyIcon = "assets/icons/key-round.svg";
+  static const String searchIcon = "assets/icons/search.svg";
+  static const String sortIcon = "assets/icons/sort.svg";
+  static const String backIcon = "assets/icons/back.svg";
+  static const String cartIcon = "assets/icons/cart.svg";
+  static const String deleteIcon = "assets/icons/delete.svg";
 }

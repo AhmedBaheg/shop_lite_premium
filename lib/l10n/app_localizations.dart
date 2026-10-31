@@ -259,6 +259,174 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Send reset link'**
   String get sendResetLink;
+
+  /// No description provided for @shopLite.
+  ///
+  /// In en, this message translates to:
+  /// **'ShopLite'**
+  String get shopLite;
+
+  /// No description provided for @everyday.
+  ///
+  /// In en, this message translates to:
+  /// **'Everyday, upgraded.'**
+  String get everyday;
+
+  /// No description provided for @lessSearching.
+  ///
+  /// In en, this message translates to:
+  /// **'Less searching. More good finds.'**
+  String get lessSearching;
+
+  /// No description provided for @searchProducts.
+  ///
+  /// In en, this message translates to:
+  /// **'Search products'**
+  String get searchProducts;
+
+  /// No description provided for @featuredFinds.
+  ///
+  /// In en, this message translates to:
+  /// **'Featured finds'**
+  String get featuredFinds;
+
+  /// No description provided for @seeAll.
+  ///
+  /// In en, this message translates to:
+  /// **'See all'**
+  String get seeAll;
+
+  /// No description provided for @home.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get home;
+
+  /// No description provided for @explore.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore'**
+  String get explore;
+
+  /// No description provided for @exploreTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore product'**
+  String get exploreTitle;
+
+  /// No description provided for @wishlist.
+  ///
+  /// In en, this message translates to:
+  /// **'Wishlist'**
+  String get wishlist;
+
+  /// No description provided for @wishlistTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your wishlist'**
+  String get wishlistTitle;
+
+  /// No description provided for @cart.
+  ///
+  /// In en, this message translates to:
+  /// **'Cart'**
+  String get cart;
+
+  /// No description provided for @cartTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Shopping cart'**
+  String get cartTitle;
+
+  /// No description provided for @profile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profile;
+
+  /// No description provided for @products.
+  ///
+  /// In en, this message translates to:
+  /// **'products'**
+  String get products;
+
+  /// No description provided for @sort.
+  ///
+  /// In en, this message translates to:
+  /// **'Sort & filter'**
+  String get sort;
+
+  /// No description provided for @search.
+  ///
+  /// In en, this message translates to:
+  /// **'Search products'**
+  String get search;
+
+  /// No description provided for @savedFav.
+  ///
+  /// In en, this message translates to:
+  /// **'saved favorites'**
+  String get savedFav;
+
+  /// No description provided for @savedFavSubTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'A little inspiration for later.'**
+  String get savedFavSubTitle;
+
+  /// No description provided for @itemsInYourCart.
+  ///
+  /// In en, this message translates to:
+  /// **'items in your cart'**
+  String get itemsInYourCart;
+
+  /// No description provided for @addToCart.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to cart'**
+  String get addToCart;
+
+  /// No description provided for @subTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Subtotal'**
+  String get subTotal;
+
+  /// No description provided for @delivery.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery'**
+  String get delivery;
+
+  /// No description provided for @tax.
+  ///
+  /// In en, this message translates to:
+  /// **'Tax (8%)'**
+  String get tax;
+
+  /// No description provided for @total.
+  ///
+  /// In en, this message translates to:
+  /// **'Total'**
+  String get total;
+
+  /// No description provided for @continueToCheckout.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue to checkout'**
+  String get continueToCheckout;
+
+  /// No description provided for @secure.
+  ///
+  /// In en, this message translates to:
+  /// **'Secure checkout. No hidden fees.'**
+  String get secure;
+
+  /// No description provided for @items.
+  ///
+  /// In en, this message translates to:
+  /// **'items'**
+  String get items;
 }
 
 class _AppLocalizationsDelegate

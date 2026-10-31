@@ -67,10 +67,11 @@ class PrimaryButton extends StatelessWidget {
                       Text(
                         text ?? '',
                         style: isOutlineBtn
-                            ? AppTextStyles.button.copyWith(
+                            ? AppTextStyles.button(
+                                context,
                                 color: AppColors.textPrimaryLight,
                               )
-                            : AppTextStyles.button,
+                            : AppTextStyles.button(context),
                       ),
                     ],
                   ),

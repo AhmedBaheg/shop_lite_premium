@@ -7,20 +7,23 @@ import '../theme/app_colors.dart';
 class AppTextFormField extends StatelessWidget {
   const AppTextFormField({
     super.key,
-    required this.textLabel,
-    required this.hintText,
-    required this.prefixIcon,
+    this.textLabel,
+    this.hintText,
+    this.prefixIcon,
     this.suffixIcon,
-    required this.onSaved,
-    required this.validator,
-    this.obscureText = false, this.keyboardType,
+    this.onSaved,
+    this.validator,
+    this.obscureText = false,
+    this.keyboardType,
+    this.onChanged,
   });
 
-  final String textLabel, hintText, prefixIcon;
+  final String? textLabel, hintText, prefixIcon;
   final Widget? suffixIcon;
   final bool obscureText;
   final Function(String?)? onSaved;
   final String? Function(String?)? validator;
+  final Function(String)? onChanged;
   final TextInputType? keyboardType;
 
   @override
@@ -28,17 +31,17 @@ class AppTextFormField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(textLabel, style: AppTextStyles.labelLarge),
+        Text(textLabel ?? '', style: AppTextStyles.labelLarge(context)),
         SizedBox(height: 8),
         TextFormField(
           decoration: InputDecoration(
             hintText: hintText,
             filled: true,
             fillColor: AppColors.surfaceSubtleLight,
-            hintStyle: AppTextStyles.hint,
+            hintStyle: AppTextStyles.hint(context),
             prefixIcon: Padding(
               padding: EdgeInsetsGeometry.all(14),
-              child: SvgPicture.asset(prefixIcon),
+              child: SvgPicture.asset(prefixIcon ?? ''),
             ),
             suffixIcon: Padding(
               padding: EdgeInsetsGeometry.all(14),
@@ -52,9 +55,10 @@ class AppTextFormField extends StatelessWidget {
           validator: validator,
           obscureText: obscureText,
           cursorColor: AppColors.textPrimaryLight,
-          style: AppTextStyles.bodyMedium,
+          style: AppTextStyles.bodyMedium(context),
           keyboardType: keyboardType,
           onSaved: onSaved,
+          onChanged: onChanged,
         ),
       ],
     );

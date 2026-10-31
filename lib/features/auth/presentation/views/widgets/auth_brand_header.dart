@@ -5,8 +5,7 @@ import 'package:shop_lite_premium/core/utils/app_strings.dart';
 import 'package:shop_lite_premium/l10n/app_localizations.dart';
 
 class AuthBrandHeader extends StatelessWidget {
-  const AuthBrandHeader({super.key,});
-
+  const AuthBrandHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +21,16 @@ class AuthBrandHeader extends StatelessWidget {
         RichText(
           text: TextSpan(
             text: localization!.shop,
-            style: AppTextStyles.displayMedium.copyWith(
+            style: AppTextStyles.displayMedium(
+              context,
               color: AppColors.textPrimaryLight,
             ),
             children: [
               TextSpan(
                 text: localization.lite,
-                style: AppTextStyles.displayMedium.copyWith(
-                  color: AppColors.actionPrimaryLight,
+                style: AppTextStyles.displayMedium(
+                  context,
+                  color: AppColors.textPrimaryLight,
                 ),
               ),
             ],

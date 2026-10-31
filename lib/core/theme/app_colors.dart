@@ -27,4 +27,7 @@ abstract final class AppColors {
   static const info = Color(0xFF1763F6);
   static const white = Color(0xFFFFFFFF);
   static const transparent = Color(0xFFFFFFFFFF);
+  static const Color productBackgroundSand = Color(0xFFD8CCB8);
+  static const Color productBackgroundSlate = Color(0xFF303640);
+  static const Color productBackgroundLight = Color(0xFFE7E7E4);
 }

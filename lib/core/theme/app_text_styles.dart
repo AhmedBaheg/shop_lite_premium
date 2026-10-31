@@ -1,198 +1,282 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shop_lite_premium/core/theme/app_colors.dart';
 
-/// Typography system for ShopLite.
-/// One font family (Cairo) is used for both Arabic and English text.
-/// Colors are supplied by the active Theme, so these styles work in Light/Dark.
+import 'app_colors.dart';
+
+/// ShopLite typography.
+/// One shared style API works for both English and Arabic. Pass the displayed
+/// text to `text:` and the font family is selected automatically:
+/// Latin -> Inter; Arabic -> Noto Sans Arabic (as defined in Figma).
+/// Colors follow the active Theme so the styles work in Light and Dark modes.
 abstract final class AppTextStyles {
-  // Cairo is used consistently for both scripts.
-  static TextStyle get _base => GoogleFonts.inter();
+  static final RegExp _arabicPattern = RegExp(
+    r'[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]',
+  );
 
-  // ---------------------------------------------------------------------------
-  // DISPLAY — Large, rare-use promotional headings
-  // ---------------------------------------------------------------------------
+  static bool containsArabic(String? text) =>
+      text != null && _arabicPattern.hasMatch(text);
 
-  /// 32px / Bold — ShopLite wordmark on Splash or a single hero headline.
-  /// Avoid using it for normal page titles to keep the UI calm.
-  static TextStyle get displayLarge => _base.copyWith(
-        fontSize: 38,
-        fontWeight: FontWeight.w700,
-        height: 1.2,
-        letterSpacing: -0.3,
-      );
-
-  /// 28px / Bold — Welcome/confirmation message when there is enough space.
-  static TextStyle get displayMedium => _base.copyWith(
-        fontSize: 28,
-        fontWeight: FontWeight.w700,
-        height: 1.25,
-      );
-
-  // ---------------------------------------------------------------------------
-  // HEADLINES — Page and section headings
-  // ---------------------------------------------------------------------------
-
-  /// 24px / Bold — Main page title, e.g. Welcome Back or Shopping Cart.
-  static TextStyle get headlineLarge => _base.copyWith(
-        fontSize: 24,
-        fontWeight: FontWeight.w700,
-        height: 1.3,
-      );
-
-  /// 22px / SemiBold — Compact page title or a secondary main heading.
-  static TextStyle get headlineMedium => _base.copyWith(
-        fontSize: 22,
-        fontWeight: FontWeight.w600,
-        height: 1.35,
-      );
-
-  /// 20px / SemiBold — Section headings, e.g. Featured Products or Order Summary.
-  static TextStyle get headlineSmall => _base.copyWith(
-        fontSize: 20,
-        fontWeight: FontWeight.w600,
-        height: 1.4,
-      );
-
-  // ---------------------------------------------------------------------------
-  // TITLES — Product and component titles
-  // ---------------------------------------------------------------------------
-
-  /// 18px / Bold — Product name on its details page or an important value.
-  static TextStyle get titleLarge => _base.copyWith(
-        fontSize: 18,
-        fontWeight: FontWeight.w700,
-        height: 1.4,
-      );
-
-  /// 16px / SemiBold — Product names in lists and titles within account rows.
-  static TextStyle get titleMedium => _base.copyWith(
-        fontSize: 16,
-        fontWeight: FontWeight.w600,
-        height: 1.45,
-      );
-
-  /// 14px / SemiBold — Compact product cards and short category names.
-  static TextStyle get titleSmall => _base.copyWith(
-        fontSize: 14,
-        fontWeight: FontWeight.w600,
-        height: 1.45,
-      );
-
-  // ---------------------------------------------------------------------------
-  // BODY — Readable descriptions and content
-  // ---------------------------------------------------------------------------
-
-  /// 16px / Regular — Main descriptions and instructions.
-  static TextStyle get bodyLarge => _base.copyWith(
-        fontSize: 16,
-        fontWeight: FontWeight.w400,
-        height: 1.65,
-      );
-
-  /// 14px / Regular — Default body text, product information, and form copy.
-  static TextStyle get bodyMedium => _base.copyWith(
-        fontSize: 14,
-        fontWeight: FontWeight.w400,
-        height: 1.6,
-      );
-
-  /// 12px / Regular — Short metadata, review counts, and supporting hints.
-  /// Avoid this size for important information or long paragraphs.
-  static TextStyle get bodySmall => _base.copyWith(
-        fontSize: 12,
-        fontWeight: FontWeight.w400,
-        height: 1.5,
-      );
-
-  // ---------------------------------------------------------------------------
-  // LABELS — Buttons, filters, tabs, and controls
-  // ---------------------------------------------------------------------------
-
-  /// 14px / Bold — Primary CTA labels: Sign In, Create Account, Add to Cart.
-  static TextStyle get labelLarge => _base.copyWith(
-        fontSize: 14,
-        fontWeight: FontWeight.w700,
-        height: 1.4,
-      );
-
-  /// 12px / SemiBold — Category chips, compact filters, and secondary controls.
-  static TextStyle get labelMedium => _base.copyWith(
-        fontSize: 12,
-        fontWeight: FontWeight.w600,
-        height: 1.4,
-      );
-
-  /// 11px / SemiBold — Very small navigation labels and low-priority metadata.
-  /// Use sparingly; prefer 12px when the text matters.
-  static TextStyle get labelSmall => _base.copyWith(
-        fontSize: 11,
-        fontWeight: FontWeight.w600,
-        height: 1.35,
-      );
-
-  // ---------------------------------------------------------------------------
-  // SPECIAL PURPOSE — Links, prices, and form hints
-  // ---------------------------------------------------------------------------
-
-  /// 14px / SemiBold — Forgot Password, Sign Up, See All, and inline links.
-  static TextStyle get link => _base.copyWith(
-        fontSize: 14,
-        fontWeight: FontWeight.w600,
-        height: 1.4,
-        color: AppColors.actionPrimaryLight,
-      );
-
-  /// 20px / Bold — Main product price or total value.
-  static TextStyle get priceLarge => _base.copyWith(
-        fontSize: 20,
-        fontWeight: FontWeight.w700,
-        height: 1.35,
-      );
-
-  /// 14px / Medium — Small/secondary prices in product cards.
-  static TextStyle get priceMedium => _base.copyWith(
-        fontSize: 14,
-        fontWeight: FontWeight.w600,
-        height: 1.4,
-      );
-
-  /// 12px / Regular — Hint text and field helper messages.
-  static TextStyle get hint => _base.copyWith(
-        fontSize: 12,
-        fontWeight: FontWeight.w400,
-        height: 1.5,
-      );
-
-  /// 14px / SemiBold — Shared text style for primary buttons.
-  static TextStyle get button => _base.copyWith(
-        fontSize: 14,
-        fontWeight: FontWeight.w700,
-        height: 1.4,
-        color: AppColors.white,
-      );
-
-  /// Returns a Material TextTheme using the ShopLite font sizes and theme colors.
-  /// Pass the active ColorScheme colors so Light/Dark themes remain consistent.
-  static TextTheme themed({
-    required Color primaryText,
-    required Color secondaryText,
+  static TextStyle _style(
+    BuildContext context, {
+    String? text,
+    required double fontSize,
+    FontWeight fontWeight = FontWeight.w400,
+    double height = 1.4,
+    double letterSpacing = 0,
+    Color? color,
   }) {
-    return TextTheme(
-      displayLarge: displayLarge.copyWith(color: primaryText),
-      displayMedium: displayMedium.copyWith(color: primaryText),
-      headlineLarge: headlineLarge.copyWith(color: primaryText),
-      headlineMedium: headlineMedium.copyWith(color: primaryText),
-      headlineSmall: headlineSmall.copyWith(color: primaryText),
-      titleLarge: titleLarge.copyWith(color: primaryText),
-      titleMedium: titleMedium.copyWith(color: primaryText),
-      titleSmall: titleSmall.copyWith(color: primaryText),
-      bodyLarge: bodyLarge.copyWith(color: primaryText),
-      bodyMedium: bodyMedium.copyWith(color: primaryText),
-      bodySmall: bodySmall.copyWith(color: secondaryText),
-      labelLarge: labelLarge.copyWith(color: primaryText),
-      labelMedium: labelMedium.copyWith(color: secondaryText),
-      labelSmall: labelSmall.copyWith(color: secondaryText),
+    final isArabic = containsArabic(text);
+    final resolvedColor = color ?? Theme.of(context).colorScheme.onSurface;
+
+    if (isArabic) {
+      return GoogleFonts.notoSansArabic(
+        fontSize: fontSize,
+        fontWeight: fontWeight,
+        height: height,
+        letterSpacing: letterSpacing,
+        color: resolvedColor,
+      );
+    }
+
+    return GoogleFonts.inter(
+      fontSize: fontSize,
+      fontWeight: fontWeight,
+      height: height,
+      letterSpacing: letterSpacing,
+      color: resolvedColor,
     );
   }
+
+  // DISPLAY — one-off large promotional or success headings.
+  static TextStyle displayLarge(
+    BuildContext context, {
+    String? text,
+    Color? color,
+  }) => _style(
+    context,
+    text: text,
+    fontSize: 32,
+    fontWeight: FontWeight.w700,
+    height: 1.25,
+    color: color,
+  );
+
+  static TextStyle displayMedium(
+    BuildContext context, {
+    String? text,
+    Color? color,
+  }) => _style(
+    context,
+    text: text,
+    fontSize: 28,
+    fontWeight: FontWeight.w700,
+    height: 1.3,
+    color: color,
+  );
+
+  // HEADLINES — page and section headings. Figma's named Heading style is 24px,
+  // Semi Bold, 140% line height and 0 letter spacing.
+  static TextStyle headlineLarge(
+    BuildContext context, {
+    String? text,
+    Color? color,
+  }) => _style(
+    context,
+    text: text,
+    fontSize: 24,
+    fontWeight: FontWeight.w600,
+    height: 1.4,
+    color: color,
+  );
+
+  static TextStyle headlineMedium(
+    BuildContext context, {
+    String? text,
+    Color? color,
+  }) => _style(
+    context,
+    text: text,
+    fontSize: 22,
+    fontWeight: FontWeight.w600,
+    height: 1.4,
+    color: color,
+  );
+
+  static TextStyle headlineSmall(
+    BuildContext context, {
+    String? text,
+    Color? color,
+  }) => _style(
+    context,
+    text: text,
+    fontSize: 20,
+    fontWeight: FontWeight.w600,
+    height: 1.4,
+    color: color,
+  );
+
+  // TITLES — product names, card titles, order/account rows.
+  static TextStyle titleLarge(
+    BuildContext context, {
+    String? text,
+    Color? color,
+  }) => _style(
+    context,
+    text: text,
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    height: 1.4,
+    color: color,
+  );
+
+  static TextStyle titleMedium(
+    BuildContext context, {
+    String? text,
+    Color? color,
+  }) => _style(
+    context,
+    text: text,
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    height: 1.4,
+    color: color ?? AppColors.textPrimaryLight,
+  );
+
+  static TextStyle titleSmall(
+    BuildContext context, {
+    String? text,
+    Color? color,
+  }) => _style(
+    context,
+    text: text,
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    height: 1.4,
+    color: color,
+  );
+
+  // BODY — descriptions, field text, help and supporting content.
+  static TextStyle bodyLarge(
+    BuildContext context, {
+    String? text,
+    Color? color,
+  }) => _style(context, text: text, fontSize: 16, height: 1.5, color: color);
+
+  static TextStyle bodyMedium(
+    BuildContext context, {
+    String? text,
+    Color? color,
+  }) => _style(context, text: text, fontSize: 14, height: 1.5, color: color);
+
+  static TextStyle bodySmall(
+    BuildContext context, {
+    String? text,
+    Color? color,
+  }) => _style(
+    context,
+    text: text,
+    fontSize: 12,
+    height: 1.4,
+    color: color ?? Theme.of(context).colorScheme.onSurfaceVariant,
+  );
+
+  // LABELS — controls, tabs, category chips and short metadata.
+  static TextStyle labelLarge(
+    BuildContext context, {
+    String? text,
+    Color? color,
+  }) => _style(
+    context,
+    text: text,
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    height: 1.35,
+    color: color,
+  );
+
+  static TextStyle labelMedium(
+    BuildContext context, {
+    String? text,
+    Color? color,
+  }) => _style(
+    context,
+    text: text,
+    fontSize: 12,
+    fontWeight: FontWeight.w600,
+    height: 1.35,
+    color: color ?? Theme.of(context).colorScheme.onSurfaceVariant,
+  );
+
+  static TextStyle labelSmall(
+    BuildContext context, {
+    String? text,
+    Color? color,
+  }) => _style(
+    context,
+    text: text,
+    fontSize: 11,
+    fontWeight: FontWeight.w600,
+    height: 1.35,
+    color: color ?? Theme.of(context).colorScheme.onSurfaceVariant,
+  );
+
+  // Product price, main total and inline links.
+  static TextStyle priceLarge(
+    BuildContext context, {
+    String? text,
+    Color? color,
+  }) => _style(
+    context,
+    text: text,
+    fontSize: 24,
+    fontWeight: FontWeight.w700,
+    height: 1.25,
+    color: color,
+  );
+
+  static TextStyle priceMedium(
+    BuildContext context, {
+    String? text,
+    Color? color,
+  }) => _style(
+    context,
+    text: text,
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    height: 1.4,
+    color: color,
+  );
+
+  static TextStyle hint(
+      BuildContext context, {
+        String? text,
+        Color? color,
+      }) => _style(
+    context,
+    text: text,
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    height: 1.4,
+    color: color ?? AppColors.textSecondaryLight,
+  );
+
+  static TextStyle link(BuildContext context, {String? text, Color? color}) =>
+      _style(
+        context,
+        text: text,
+        fontSize: 13,
+        fontWeight: FontWeight.w600,
+        height: 1.4,
+        color: color ?? AppColors.actionPrimaryLight,
+      );
+
+  static TextStyle button(BuildContext context, {String? text, Color? color}) =>
+      _style(
+        context,
+        text: text,
+        fontSize: 14,
+        fontWeight: FontWeight.w600,
+        height: 1.35,
+        color: color ?? Theme.of(context).colorScheme.onPrimary,
+      );
 }

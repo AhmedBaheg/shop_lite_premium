@@ -92,4 +92,88 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get sendResetLink => 'Send reset link';
+
+  @override
+  String get shopLite => 'ShopLite';
+
+  @override
+  String get everyday => 'Everyday, upgraded.';
+
+  @override
+  String get lessSearching => 'Less searching. More good finds.';
+
+  @override
+  String get searchProducts => 'Search products';
+
+  @override
+  String get featuredFinds => 'Featured finds';
+
+  @override
+  String get seeAll => 'See all';
+
+  @override
+  String get home => 'Home';
+
+  @override
+  String get explore => 'Explore';
+
+  @override
+  String get exploreTitle => 'Explore product';
+
+  @override
+  String get wishlist => 'Wishlist';
+
+  @override
+  String get wishlistTitle => 'Your wishlist';
+
+  @override
+  String get cart => 'Cart';
+
+  @override
+  String get cartTitle => 'Shopping cart';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get products => 'products';
+
+  @override
+  String get sort => 'Sort & filter';
+
+  @override
+  String get search => 'Search products';
+
+  @override
+  String get savedFav => 'saved favorites';
+
+  @override
+  String get savedFavSubTitle => 'A little inspiration for later.';
+
+  @override
+  String get itemsInYourCart => 'items in your cart';
+
+  @override
+  String get addToCart => 'Add to cart';
+
+  @override
+  String get subTotal => 'Subtotal';
+
+  @override
+  String get delivery => 'Delivery';
+
+  @override
+  String get tax => 'Tax (8%)';
+
+  @override
+  String get total => 'Total';
+
+  @override
+  String get continueToCheckout => 'Continue to checkout';
+
+  @override
+  String get secure => 'Secure checkout. No hidden fees.';
+
+  @override
+  String get items => 'items';
 }

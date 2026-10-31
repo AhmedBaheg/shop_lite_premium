@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_lite_premium/core/theme/app_colors.dart';
 import 'package:shop_lite_premium/core/theme/app_text_styles.dart';
+import 'package:shop_lite_premium/features/product/presentation/views/home_view.dart';
 import 'package:shop_lite_premium/l10n/app_localizations.dart';
 
 import '../../../../../core/shared_widgets/primary_button.dart';
@@ -30,11 +31,10 @@ class CreateAccountView extends StatelessWidget {
     );
     return BlocListener<AuthCubit, AuthState>(
       listener: (context, state) {
-        final authCubit = context.read<AuthCubit>();
         if (state is AuthCreateAccountSuccess) {
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => ProductView()),
+            MaterialPageRoute(builder: (context) => HomeView()),
             (route) => false,
           );
         } else if (state is AuthFailure) {
@@ -82,9 +82,7 @@ class CreateAccountView extends StatelessWidget {
                     SizedBox(height: 20),
                     Text(
                       localization.policy,
-                      style: AppTextStyles.bodySmall.copyWith(
-                        color: AppColors.textSecondaryLight,
-                      ),
+                      style: AppTextStyles.bodySmall(context, color: AppColors.textSecondaryLight),
                     ),
                     SizedBox(height: 20),
                     BlocBuilder<AuthCubit, AuthState>(

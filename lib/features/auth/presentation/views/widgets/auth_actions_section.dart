@@ -31,9 +31,7 @@ class AuthActionsSection extends StatelessWidget {
             SizedBox(width: 16),
             Text(
               localization!.continueWith,
-              style: AppTextStyles.bodyMedium.copyWith(
-                color: AppColors.textSecondaryLight,
-              ),
+              style: AppTextStyles.bodyMedium(context,color: AppColors.textSecondaryLight,)
             ),
             SizedBox(width: 16),
             Expanded(

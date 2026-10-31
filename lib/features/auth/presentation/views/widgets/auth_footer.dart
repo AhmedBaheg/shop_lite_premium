@@ -25,9 +25,7 @@ class AuthFooter extends StatelessWidget {
           isLogin
               ? localization!.newToShopLite
               : localization!.alreadyHaveAnAccount,
-          style: AppTextStyles.bodyMedium.copyWith(
-            color: AppColors.textSecondaryLight,
-          ),
+          style: AppTextStyles.bodyMedium(context, color: AppColors.textSecondaryLight,)
         ),
         SizedBox(width: 8),
         TextButton(
@@ -50,7 +48,7 @@ class AuthFooter extends StatelessWidget {
           style: TextButton.styleFrom(padding: EdgeInsets.zero),
           child: Text(
             isLogin ? localization.createAnAccount : localization.login,
-            style: AppTextStyles.link,
+            style: AppTextStyles.link(context),
           ),
         ),
       ],

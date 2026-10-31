@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_lite_premium/core/theme/app_text_styles.dart';
+import 'package:shop_lite_premium/features/product/presentation/views/home_view.dart';
 
 import '../../../../../core/shared_widgets/primary_button.dart';
 import '../../../../../l10n/app_localizations.dart';
@@ -33,7 +34,7 @@ class LoginView extends StatelessWidget {
           final authCubit = context.read<AuthCubit>();
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => ProductView()),
+            MaterialPageRoute(builder: (context) => HomeView()),
             (route) => false,
           );
         } else if (state is AuthFailure) {
@@ -91,7 +92,7 @@ class LoginView extends StatelessWidget {
                       },
                       child: Text(
                         localization.forgotPassword,
-                        style: AppTextStyles.link,
+                        style: AppTextStyles.link(context),
                       ),
                     ),
                     SizedBox(height: 24),

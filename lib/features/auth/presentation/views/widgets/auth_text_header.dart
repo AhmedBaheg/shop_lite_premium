@@ -18,14 +18,16 @@ class AuthTextHeader extends StatelessWidget {
       children: [
         Text(
           title,
-          style: AppTextStyles.displayLarge.copyWith(
+          style: AppTextStyles.displayLarge(
+            context,
             color: AppColors.textPrimaryLight,
           ),
         ),
         SizedBox(height: 8),
         Text(
           subTitle,
-          style: AppTextStyles.bodyLarge.copyWith(
+          style: AppTextStyles.bodyLarge(
+            context,
             color: AppColors.textPrimaryLight,
           ),
         ),
