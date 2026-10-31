@@ -6,7 +6,7 @@ import 'package:shop_lite_premium/core/localization/language_storage.dart';
 import 'core/theme/app_colors.dart';
 import 'core/utils/constant.dart';
 import 'features/auth/presentation/views/views/auth_parent.dart';
-import 'features/product/presentation/views/home_view.dart';
+import 'features/home_view.dart';
 import 'l10n/app_localizations.dart';
 
 Future<void> main() async {

@@ -136,6 +136,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get profile => 'الملف الشخصي';
 
   @override
+  String get profileTitle => 'My account';
+
+  @override
   String get products => 'المنتجات';
 
   @override
@@ -176,4 +179,63 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get items => 'items';
+
+  @override
+  String get profileOrders => 'My orders';
+
+  @override
+  String profileOrdersCount(Object count) {
+    return '$count orders';
+  }
+
+  @override
+  String get profileSavedAddresses => 'Saved addresses';
+
+  @override
+  String profileAddressCount(Object count) {
+    return '$count address';
+  }
+
+  @override
+  String get profilePaymentMethods => 'Payment methods';
+
+  @override
+  String profileVisaEnding(Object lastFour) {
+    return 'Visa •$lastFour';
+  }
+
+  @override
+  String get profileNotifications => 'Notifications';
+
+  @override
+  String get profileNotificationsOn => 'On';
+
+  @override
+  String get profileNotificationsOff => 'Off';
+
+  @override
+  String get profileLanguage => 'Language';
+
+  @override
+  String get profileAppearance => 'Appearance';
+
+  @override
+  String get profileLight => 'Light';
+
+  @override
+  String get profileDark => 'Dark';
+
+  @override
+  String get profileSystem => 'System';
+
+  @override
+  String get profileHelpSupport => 'Help & support';
+
+  @override
+  String get profileLogout => 'Log out';
+
+  @override
+  String profileVersion(Object version) {
+    return 'ShopLite · Version $version';
+  }
 }

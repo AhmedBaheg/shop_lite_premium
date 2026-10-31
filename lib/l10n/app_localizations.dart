@@ -344,6 +344,12 @@ abstract class AppLocalizations {
   /// **'Profile'**
   String get profile;
 
+  /// No description provided for @profileTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'My account'**
+  String get profileTitle;
+
   /// No description provided for @products.
   ///
   /// In en, this message translates to:
@@ -427,6 +433,108 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'items'**
   String get items;
+
+  /// No description provided for @profileOrders.
+  ///
+  /// In en, this message translates to:
+  /// **'My orders'**
+  String get profileOrders;
+
+  /// No description provided for @profileOrdersCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} orders'**
+  String profileOrdersCount(Object count);
+
+  /// No description provided for @profileSavedAddresses.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved addresses'**
+  String get profileSavedAddresses;
+
+  /// No description provided for @profileAddressCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} address'**
+  String profileAddressCount(Object count);
+
+  /// No description provided for @profilePaymentMethods.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment methods'**
+  String get profilePaymentMethods;
+
+  /// No description provided for @profileVisaEnding.
+  ///
+  /// In en, this message translates to:
+  /// **'Visa •{lastFour}'**
+  String profileVisaEnding(Object lastFour);
+
+  /// No description provided for @profileNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get profileNotifications;
+
+  /// No description provided for @profileNotificationsOn.
+  ///
+  /// In en, this message translates to:
+  /// **'On'**
+  String get profileNotificationsOn;
+
+  /// No description provided for @profileNotificationsOff.
+  ///
+  /// In en, this message translates to:
+  /// **'Off'**
+  String get profileNotificationsOff;
+
+  /// No description provided for @profileLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get profileLanguage;
+
+  /// No description provided for @profileAppearance.
+  ///
+  /// In en, this message translates to:
+  /// **'Appearance'**
+  String get profileAppearance;
+
+  /// No description provided for @profileLight.
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get profileLight;
+
+  /// No description provided for @profileDark.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get profileDark;
+
+  /// No description provided for @profileSystem.
+  ///
+  /// In en, this message translates to:
+  /// **'System'**
+  String get profileSystem;
+
+  /// No description provided for @profileHelpSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Help & support'**
+  String get profileHelpSupport;
+
+  /// No description provided for @profileLogout.
+  ///
+  /// In en, this message translates to:
+  /// **'Log out'**
+  String get profileLogout;
+
+  /// No description provided for @profileVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'ShopLite · Version {version}'**
+  String profileVersion(Object version);
 }
 
 class _AppLocalizationsDelegate

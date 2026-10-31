@@ -15,4 +15,13 @@ class AppStrings {
   static const String backIcon = "assets/icons/back.svg";
   static const String cartIcon = "assets/icons/cart.svg";
   static const String deleteIcon = "assets/icons/delete.svg";
+  static const String appearanceIcon = "assets/icons/appearance.svg";
+  static const String circleHelpIcon = "assets/icons/circle-help.svg";
+  static const String creditCardIcon = "assets/icons/credit-card.svg";
+  static const String languagesIcon = "assets/icons/languages.svg";
+  static const String logoutIcon = "assets/icons/log-out.svg";
+  static const String mapPinIcon = "assets/icons/map-pin.svg";
+  static const String notificationIcon = "assets/icons/notification.svg";
+  static const String packageIcon = "assets/icons/package.svg";
+  static const String chevronRightIcon = "assets/icons/chevron-right.svg";
 }
