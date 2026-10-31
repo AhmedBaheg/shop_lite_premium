@@ -9,11 +9,13 @@ import 'package:shop_lite_premium/features/auth/domain/use_cases/logout_use_case
 import 'package:shop_lite_premium/features/auth/presentation/cubits/auth_cubit.dart';
 import 'package:shop_lite_premium/features/auth/presentation/views/views/auth_parent.dart';
 
+import '../../../../core/localization/language_cubit.dart';
 import '../../../../core/shared_widgets/custom_divider.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../../auth/domain/use_cases/get_user_data_use_case.dart';
+import '../../../language/presentation/views/language_view.dart';
 import '../widgets/profile_menu_item.dart';
 import '../widgets/profile_user_info.dart';
 
@@ -24,19 +26,16 @@ class ProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     final localization = AppLocalizations.of(context)!;
     return BlocProvider(
-      create: (context) =>
-          AuthCubit(
-            logoutUseCase: LogoutUseCase(
-              authRepo: AuthRepoImpl(
-                authRemoteDataSource: AuthRemoteDataSourceImpl(),
-              ),
-            ),
-            getUserDataUseCase: GetUserDataUseCase(
-              AuthRepoImpl(
-                authRemoteDataSource: AuthRemoteDataSourceImpl(),
-              ),
-            ),
-          )..getUserData(),
+      create: (context) => AuthCubit(
+        logoutUseCase: LogoutUseCase(
+          authRepo: AuthRepoImpl(
+            authRemoteDataSource: AuthRemoteDataSourceImpl(),
+          ),
+        ),
+        getUserDataUseCase: GetUserDataUseCase(
+          AuthRepoImpl(authRemoteDataSource: AuthRemoteDataSourceImpl()),
+        ),
+      )..getUserData(),
       child: Scaffold(
         appBar: AppMainBar(title: localization.profileTitle),
         body: SingleChildScrollView(
@@ -56,7 +55,7 @@ class ProfileView extends StatelessWidget {
                           ),
                         );
                       } else if (state is AuthGetUserDataSuccess) {
-                        return ProfileUserInfo(userEntity: state.userEntity,);
+                        return ProfileUserInfo(userEntity: state.userEntity);
                       }
                       return SizedBox.shrink();
                     },
@@ -100,6 +99,28 @@ class ProfileView extends StatelessWidget {
                     icon: AppStrings.languagesIcon,
                     title: localization.profileLanguage,
                     value: localization.language,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LanguageView(
+                            locale: const Locale('en'),
+                            onLocaleChanged: (Locale value) {
+                              context.read<LanguageCubit>().changeLanguage(
+                                value.languageCode,
+                              );
+                            },
+                            title: localization.settingsLanguageDescription,
+                            description:
+                                localization.settingsLanguageDescription,
+                            englishTitle: localization.settingsEnglish,
+                            englishDescription: localization.settingsEnglishDescription,
+                            arabicTitle: localization.settingsArabic,
+                            arabicDescription: localization.settingsArabicDescription,
+                          ),
+                        ),
+                      );
+                    },
                   ),
 
                   CustomDivider(),
@@ -125,7 +146,7 @@ class ProfileView extends StatelessWidget {
                         Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(builder: (context) => AuthParent()),
-                              (route) => false,
+                          (route) => false,
                         );
                       } else if (state is AuthFailure) {
                         ScaffoldMessenger.of(context).showSnackBar(

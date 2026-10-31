@@ -13,6 +13,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get language => 'English';
 
   @override
+  String get languageTitle => 'Language';
+
+  @override
   String get shop => 'Shop';
 
   @override
@@ -238,4 +241,33 @@ class AppLocalizationsEn extends AppLocalizations {
   String profileVersion(Object version) {
     return 'ShopLite · Version $version';
   }
+
+  @override
+  String get settingsLanguageDescription =>
+      'Choose your preferred language for the app experience.';
+
+  @override
+  String get settingsEnglish => 'English';
+
+  @override
+  String get settingsEnglishDescription => 'Use English in the app';
+
+  @override
+  String get settingsArabic => 'Arabic';
+
+  @override
+  String get settingsArabicDescription => 'Use Arabic in the app';
+
+  @override
+  String get settingsAppearanceDescription =>
+      'Choose how the app looks on your device.';
+
+  @override
+  String get settingsLightDescription => 'Clean and bright experience';
+
+  @override
+  String get settingsDarkDescription => 'Easy on the eyes at night';
+
+  @override
+  String get settingsSystemDescription => 'Follow your device settings';
 }

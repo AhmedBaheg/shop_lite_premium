@@ -1,6 +1,7 @@
 {
   "@@locale": "en",
   "language": "English",
+  "languageTitle": "Language",
   "shop": "Shop",
   "lite": "Lite",
   "welcome": "Welcome back.",
@@ -72,5 +73,14 @@
   "profileSystem": "System",
   "profileHelpSupport": "Help & support",
   "profileLogout": "Log out",
-  "profileVersion": "ShopLite · Version {version}"
+  "profileVersion": "ShopLite · Version {version}",
+  "settingsLanguageDescription": "Choose your preferred language for the app experience.",
+  "settingsEnglish": "English",
+  "settingsEnglishDescription": "Use English in the app",
+  "settingsArabic": "Arabic",
+  "settingsArabicDescription": "Use Arabic in the app",
+  "settingsAppearanceDescription": "Choose how the app looks on your device.",
+  "settingsLightDescription": "Clean and bright experience",
+  "settingsDarkDescription": "Easy on the eyes at night",
+  "settingsSystemDescription": "Follow your device settings"
 }

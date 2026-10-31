@@ -104,6 +104,12 @@ abstract class AppLocalizations {
   /// **'English'**
   String get language;
 
+  /// No description provided for @languageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get languageTitle;
+
   /// No description provided for @shop.
   ///
   /// In en, this message translates to:
@@ -535,6 +541,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'ShopLite · Version {version}'**
   String profileVersion(Object version);
+
+  /// No description provided for @settingsLanguageDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose your preferred language for the app experience.'**
+  String get settingsLanguageDescription;
+
+  /// No description provided for @settingsEnglish.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get settingsEnglish;
+
+  /// No description provided for @settingsEnglishDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Use English in the app'**
+  String get settingsEnglishDescription;
+
+  /// No description provided for @settingsArabic.
+  ///
+  /// In en, this message translates to:
+  /// **'Arabic'**
+  String get settingsArabic;
+
+  /// No description provided for @settingsArabicDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Use Arabic in the app'**
+  String get settingsArabicDescription;
+
+  /// No description provided for @settingsAppearanceDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose how the app looks on your device.'**
+  String get settingsAppearanceDescription;
+
+  /// No description provided for @settingsLightDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Clean and bright experience'**
+  String get settingsLightDescription;
+
+  /// No description provided for @settingsDarkDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Easy on the eyes at night'**
+  String get settingsDarkDescription;
+
+  /// No description provided for @settingsSystemDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Follow your device settings'**
+  String get settingsSystemDescription;
 }
 
 class _AppLocalizationsDelegate

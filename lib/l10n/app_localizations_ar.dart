@@ -10,22 +10,25 @@ class AppLocalizationsAr extends AppLocalizations {
   AppLocalizationsAr([String locale = 'ar']) : super(locale);
 
   @override
-  String get language => 'عربي';
+  String get language => 'العربية';
 
   @override
-  String get shop => 'شوب';
+  String get languageTitle => 'اللغة';
+
+  @override
+  String get shop => 'تسوّق';
 
   @override
   String get lite => 'لايت';
 
   @override
-  String get welcome => 'مرحبًا بعودتك.';
+  String get welcome => 'أهلاً بعودتك.';
 
   @override
-  String get welcomeSubTitle => 'مفضلاتك اليومية بانتظارك.';
+  String get welcomeSubTitle => 'منتجاتك المفضلة بانتظارك.';
 
   @override
-  String get email => 'عنوان البريد الإلكتروني.';
+  String get email => 'البريد الإلكتروني';
 
   @override
   String get emailHint => 'hello@example.com';
@@ -37,76 +40,76 @@ class AppLocalizationsAr extends AppLocalizations {
   String get passwordHint => '••••••••';
 
   @override
-  String get forgotPassword => 'هل نسيت كلمة المرور؟';
+  String get forgotPassword => 'نسيت كلمة المرور؟';
 
   @override
   String get login => 'تسجيل الدخول';
 
   @override
-  String get continueWith => 'أو المتابعة باستخدام';
+  String get continueWith => 'أو المتابعة عبر';
 
   @override
-  String get google => 'Google';
+  String get google => 'جوجل';
 
   @override
-  String get facebook => 'Facebook';
+  String get facebook => 'فيسبوك';
 
   @override
-  String get newToShopLite => 'هل أنت جديد على شوب لايت؟';
+  String get newToShopLite => 'جديد في ShopLite؟';
 
   @override
-  String get createAnAccount => 'إنشاء حساب';
+  String get createAnAccount => 'أنشئ حسابًا';
 
   @override
-  String get alreadyHaveAnAccount => 'هل لديك حساب بالفعل؟';
+  String get alreadyHaveAnAccount => 'لديك حساب بالفعل؟';
 
   @override
   String get createAccount => 'إنشاء حساب';
 
   @override
-  String get makeYour => 'اجعل نفسك في منزلك.';
+  String get makeYour => 'مكانك هنا.';
 
   @override
-  String get makeYourSubTitle => 'تبدأ الاختيارات الرائعة بتسجيل بسيط.';
+  String get makeYourSubTitle => 'ابدأ اكتشاف المنتجات المميزة بإنشاء حسابك.';
 
   @override
   String get fullName => 'الاسم الكامل';
 
   @override
   String get policy =>
-      'بإنشاء حساب، فإنك توافق على شروط الخدمة وسياسة الخصوصية.';
+      'بإنشاء حسابك، فإنك توافق على شروط الخدمة وسياسة الخصوصية.';
 
   @override
   String get resetPassword => 'إعادة تعيين كلمة المرور';
 
   @override
   String get forgotPasswordSubTitle =>
-      'لا تقلق. أدخل البريد الإلكتروني المرتبط بحسابك وسنرسل إليك رابطًا لإعادة تعيين كلمة المرور.';
+      'لا تقلق. أدخل البريد الإلكتروني المرتبط بحسابك وسنرسل إليك رابط إعادة تعيين كلمة المرور.';
 
   @override
   String get checkYourEmail =>
-      'تحقق من صندوق الوارد ومجلد الرسائل غير المرغوب فيها بعد الإرسال.';
+      'تحقق من صندوق الوارد ومجلد البريد غير المرغوب فيه بعد الإرسال.';
 
   @override
-  String get backToLogIn => 'العودة إلى تسجيل الدخول';
+  String get backToLogIn => 'العودة لتسجيل الدخول';
 
   @override
-  String get sendResetLink => 'إرسال رابط إعادة التعيين';
+  String get sendResetLink => 'إرسال رابط الاستعادة';
 
   @override
-  String get shopLite => 'شوب لايت';
+  String get shopLite => 'ShopLite';
 
   @override
-  String get everyday => 'ارتقِ بتفاصيل يومك.';
+  String get everyday => 'كل يوم، بشكل أجمل.';
 
   @override
-  String get lessSearching => 'بحث أقل. اختيارات رائعة أكثر.';
+  String get lessSearching => 'بحث أقل، واكتشافات أفضل.';
 
   @override
   String get searchProducts => 'ابحث عن المنتجات';
 
   @override
-  String get featuredFinds => 'اختيارات مميزة';
+  String get featuredFinds => 'اختياراتنا لك';
 
   @override
   String get seeAll => 'عرض الكل';
@@ -115,16 +118,16 @@ class AppLocalizationsAr extends AppLocalizations {
   String get home => 'الرئيسية';
 
   @override
-  String get explore => 'استكشف';
+  String get explore => 'اكتشف';
 
   @override
-  String get exploreTitle => 'استكشف المنتج';
+  String get exploreTitle => 'اكتشف المنتجات';
 
   @override
-  String get wishlist => 'قائمة الأمنيات';
+  String get wishlist => 'المفضلة';
 
   @override
-  String get wishlistTitle => 'قائمة أمنياتك';
+  String get wishlistTitle => 'قائمة المفضلة';
 
   @override
   String get cart => 'السلة';
@@ -133,13 +136,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get cartTitle => 'سلة التسوق';
 
   @override
-  String get profile => 'الملف الشخصي';
+  String get profile => 'حسابي';
 
   @override
-  String get profileTitle => 'My account';
+  String get profileTitle => 'حسابي';
 
   @override
-  String get products => 'المنتجات';
+  String get products => 'منتجات';
 
   @override
   String get sort => 'ترتيب وتصفية';
@@ -148,10 +151,11 @@ class AppLocalizationsAr extends AppLocalizations {
   String get search => 'ابحث عن المنتجات';
 
   @override
-  String get savedFav => 'المفضلة المحفوظة';
+  String get savedFav => 'منتجات مفضلة';
 
   @override
-  String get savedFavSubTitle => 'قليل من الإلهام لوقت لاحق.';
+  String get savedFavSubTitle =>
+      'احتفظ باختياراتك المفضلة للعودة إليها لاحقًا.';
 
   @override
   String get itemsInYourCart => 'منتجات في سلتك';
@@ -172,32 +176,32 @@ class AppLocalizationsAr extends AppLocalizations {
   String get total => 'الإجمالي';
 
   @override
-  String get continueToCheckout => 'المتابعة إلى الدفع';
+  String get continueToCheckout => 'متابعة لإتمام الشراء';
 
   @override
-  String get secure => 'دفع آمن. بلا رسوم خفية.';
+  String get secure => 'دفع آمن، بدون رسوم مخفية.';
 
   @override
-  String get items => 'items';
+  String get items => 'منتجات';
 
   @override
-  String get profileOrders => 'My orders';
+  String get profileOrders => 'طلباتي';
 
   @override
   String profileOrdersCount(Object count) {
-    return '$count orders';
+    return '$count طلبات';
   }
 
   @override
-  String get profileSavedAddresses => 'Saved addresses';
+  String get profileSavedAddresses => 'عناويني المحفوظة';
 
   @override
   String profileAddressCount(Object count) {
-    return '$count address';
+    return '$count عناوين';
   }
 
   @override
-  String get profilePaymentMethods => 'Payment methods';
+  String get profilePaymentMethods => 'طرق الدفع';
 
   @override
   String profileVisaEnding(Object lastFour) {
@@ -205,37 +209,65 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get profileNotifications => 'Notifications';
+  String get profileNotifications => 'الإشعارات';
 
   @override
-  String get profileNotificationsOn => 'On';
+  String get profileNotificationsOn => 'مفعّلة';
 
   @override
-  String get profileNotificationsOff => 'Off';
+  String get profileNotificationsOff => 'متوقفة';
 
   @override
-  String get profileLanguage => 'Language';
+  String get profileLanguage => 'اللغة';
 
   @override
-  String get profileAppearance => 'Appearance';
+  String get profileAppearance => 'المظهر';
 
   @override
-  String get profileLight => 'Light';
+  String get profileLight => 'فاتح';
 
   @override
-  String get profileDark => 'Dark';
+  String get profileDark => 'داكن';
 
   @override
-  String get profileSystem => 'System';
+  String get profileSystem => 'حسب إعدادات الجهاز';
 
   @override
-  String get profileHelpSupport => 'Help & support';
+  String get profileHelpSupport => 'المساعدة والدعم';
 
   @override
-  String get profileLogout => 'Log out';
+  String get profileLogout => 'تسجيل الخروج';
 
   @override
   String profileVersion(Object version) {
-    return 'ShopLite · Version $version';
+    return 'ShopLite · الإصدار $version';
   }
+
+  @override
+  String get settingsLanguageDescription =>
+      'اختر اللغة التي تفضل استخدامها في التطبيق.';
+
+  @override
+  String get settingsEnglish => 'الإنجليزية';
+
+  @override
+  String get settingsEnglishDescription => 'استخدم التطبيق باللغة الإنجليزية';
+
+  @override
+  String get settingsArabic => 'العربية';
+
+  @override
+  String get settingsArabicDescription => 'استخدم التطبيق باللغة العربية';
+
+  @override
+  String get settingsAppearanceDescription => 'اختر المظهر المناسب لجهازك.';
+
+  @override
+  String get settingsLightDescription => 'مظهر فاتح وبسيط';
+
+  @override
+  String get settingsDarkDescription => 'مريح للعين في الإضاءة المنخفضة';
+
+  @override
+  String get settingsSystemDescription => 'اتبع إعدادات المظهر في جهازك';
 }
