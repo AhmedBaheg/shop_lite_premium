@@ -7,15 +7,27 @@ class UserModel {
 
   UserModel({required this.email, required this.password, this.name});
 
-  factory UserModel.fromEntity(UserEntity entity){
-    return UserModel(email: entity.email, password: entity.password, name: entity.name);
+  factory UserModel.fromEntity(UserEntity entity) {
+    return UserModel(
+      email: entity.email,
+      password: entity.password,
+      name: entity.name,
+    );
+  }
+
+  UserEntity toEntity() {
+    return UserEntity(email: email, password: password, name: name);
   }
 
   Map<String, dynamic> toMap() {
-    return {
-      'email': email,
-      'password': password,
-      'name': name,
-    };
+    return {'email': email, 'password': password, 'name': name};
+  }
+
+  factory UserModel.fromMap(Map<String, dynamic> map) {
+    return UserModel(
+      email: map['email'],
+      password: map['password'],
+      name: map['name'],
+    );
   }
 }

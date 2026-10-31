@@ -43,7 +43,7 @@ class CreateAccountView extends StatelessWidget {
         }else if(state is AuthLoginWithGoogleSuccess){
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => ProductView()),
+            MaterialPageRoute(builder: (context) => HomeView()),
                 (route) => false,
           );
         }

@@ -7,6 +7,7 @@ import 'package:shop_lite_premium/features/auth/domain/use_cases/sign_in_with_go
 import '../../domain/entities/user_entity.dart';
 import '../../domain/use_cases/create_account_use_case.dart';
 import '../../domain/use_cases/forgot_password_use_case.dart';
+import '../../domain/use_cases/get_user_data_use_case.dart';
 import '../../domain/use_cases/login_use_case.dart';
 import '../../domain/use_cases/logout_use_case.dart';
 
@@ -19,6 +20,7 @@ class AuthCubit extends Cubit<AuthState> {
     this._forgotPasswordUseCase,
     this._logoutUseCase,
     this._signInWithGoogleUseCase,
+    this._getUserDataUseCase,
   }) : super(AuthInitial());
 
   final LoginUseCase? _loginUseCase;
@@ -26,6 +28,7 @@ class AuthCubit extends Cubit<AuthState> {
   final ForgotPasswordUseCase? _forgotPasswordUseCase;
   final LogoutUseCase? _logoutUseCase;
   final SignInWithGoogleUseCase? _signInWithGoogleUseCase;
+  final GetUserDataUseCase? _getUserDataUseCase;
 
   Future<void> login({required UserEntity userEntity}) async {
     emit(AuthLoading());
@@ -81,6 +84,16 @@ class AuthCubit extends Cubit<AuthState> {
     if (result is Success) {
       emit(AuthLoginWithGoogleSuccess());
     } else if (result is Failure) {
+      emit(AuthFailure(errorMessage: result.errorMessage));
+    }
+  }
+
+  Future<void> getUserData() async {
+    emit(AuthGetUserDataLoading());
+    final result = await _getUserDataUseCase?.call();
+    if (result is Success<UserEntity>) {
+      emit(AuthGetUserDataSuccess(userEntity: result.data));
+    } else if (result is Failure<UserEntity>) {
       emit(AuthFailure(errorMessage: result.errorMessage));
     }
   }

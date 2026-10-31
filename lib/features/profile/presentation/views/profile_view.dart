@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_lite_premium/core/shared_widgets/app_main_bar.dart';
 import 'package:shop_lite_premium/core/theme/app_colors.dart';
 import 'package:shop_lite_premium/core/utils/app_spacing.dart';
 import 'package:shop_lite_premium/features/auth/data/data_sources/remote/auth_remote_data_source_impl.dart';
@@ -12,6 +13,7 @@ import '../../../../core/shared_widgets/custom_divider.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../l10n/app_localizations.dart';
+import '../../../auth/domain/use_cases/get_user_data_use_case.dart';
 import '../widgets/profile_menu_item.dart';
 import '../widgets/profile_user_info.dart';
 
@@ -29,16 +31,36 @@ class ProfileView extends StatelessWidget {
                 authRemoteDataSource: AuthRemoteDataSourceImpl(),
               ),
             ),
-          ),
+            getUserDataUseCase: GetUserDataUseCase(
+              AuthRepoImpl(
+                authRemoteDataSource: AuthRemoteDataSourceImpl(),
+              ),
+            ),
+          )..getUserData(),
       child: Scaffold(
-        appBar: AppBar(title: Text(localization.profileTitle)),
+        appBar: AppMainBar(title: localization.profileTitle),
         body: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Builder(
             builder: (context) {
               return Column(
                 children: [
-                  ProfileUserInfo(),
+                  SizedBox(height: AppSpacing.x24),
+
+                  BlocBuilder<AuthCubit, AuthState>(
+                    builder: (context, state) {
+                      if (state is AuthGetUserDataLoading) {
+                        return Center(
+                          child: CircularProgressIndicator(
+                            color: AppColors.actionPrimaryLight,
+                          ),
+                        );
+                      } else if (state is AuthGetUserDataSuccess) {
+                        return ProfileUserInfo(userEntity: state.userEntity,);
+                      }
+                      return SizedBox.shrink();
+                    },
+                  ),
 
                   SizedBox(height: AppSpacing.x24),
 
@@ -106,8 +128,9 @@ class ProfileView extends StatelessWidget {
                               (route) => false,
                         );
                       } else if (state is AuthFailure) {
-                        ScaffoldMessenger.of(context)
-                            .showSnackBar(SnackBar(content: Text(state.errorMessage)));
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text(state.errorMessage)),
+                        );
                       }
                     },
                     child: ProfileMenuItem(
@@ -131,7 +154,7 @@ class ProfileView extends StatelessWidget {
                   ),
                 ],
               );
-            }
+            },
           ),
         ),
       ),

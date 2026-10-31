@@ -70,7 +70,32 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     );
 
     final uid = userCredential.user!.uid;
+
     await Hive.box<String>(Constant.uidBox).put(Constant.uidBox, uid);
 
+    final userModel = UserModel(
+      name: userCredential.user?.displayName,
+      email: userCredential.user?.email, password:"",
+    );
+
+    await FirebaseFirestore.instance
+        .collection('users')
+        .doc(uid)
+        .set(
+      userModel.toMap(),
+      SetOptions(merge: true),
+    );
+
+  }
+
+  @override
+  Future<UserModel> getUserData() async {
+    final uid = Hive.box<String>(Constant.uidBox).get(Constant.uidBox);
+
+    final userModel = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(uid)
+        .get();
+    return UserModel.fromMap(userModel.data()!);
   }
 }

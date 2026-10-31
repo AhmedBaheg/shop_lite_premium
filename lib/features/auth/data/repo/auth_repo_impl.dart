@@ -68,4 +68,14 @@ class AuthRepoImpl implements AuthRepo {
       return Failure(errorMessage: e.toString());
     }
   }
+
+  @override
+  Future<Result<UserEntity>> getUserData() async {
+    try{
+      final userModel = await _authRemoteDataSource.getUserData();
+      return Success(data: userModel.toEntity());
+    } catch(e){
+      return Failure(errorMessage: e.toString());
+    }
+  }
 }

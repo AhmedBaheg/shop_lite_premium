@@ -8,4 +8,5 @@ abstract class AuthRepo {
   Future<Result<void>> forgotPassword({required String email});
   Future<Result<void>> logout();
   Future<Result<void>> signInWithGoogle();
+  Future<Result<UserEntity>> getUserData();
 }

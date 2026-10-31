@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:shop_lite_premium/features/auth/domain/entities/user_entity.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 
 class ProfileUserInfo extends StatelessWidget {
   const ProfileUserInfo({
-    super.key,
+    super.key, required this.userEntity,
   });
+
+  final UserEntity userEntity;
+
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +30,7 @@ class ProfileUserInfo extends StatelessWidget {
             backgroundColor:
             AppColors.actionPrimaryLight.withValues(alpha: 0.09),
             child: Text(
-              'AB',
+              getInitials(userEntity.name),
               style: AppTextStyles.titleLarge(
                 context,
                 color: AppColors.actionPrimaryLight,
@@ -42,7 +46,7 @@ class ProfileUserInfo extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Ahmed Baheg',
+                userEntity.name!,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: AppTextStyles.titleLarge(context),
@@ -60,7 +64,7 @@ class ProfileUserInfo extends StatelessWidget {
                   const SizedBox(width: 6),
                   Expanded(
                     child: Text(
-                      'Ahmed@gmail.com',
+                      userEntity.email!,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: AppTextStyles.bodySmall(context),
@@ -75,4 +79,14 @@ class ProfileUserInfo extends StatelessWidget {
       ],
     );
   }
+}
+
+String getInitials(String? name) {
+  if (name == null || name.trim().isEmpty) return '';
+
+  return name
+      .trim()
+      .split(RegExp(r'\s+'))
+      .map((word) => word[0].toUpperCase())
+      .join();
 }
