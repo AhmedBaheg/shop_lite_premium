@@ -26,7 +26,7 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
     );
     return Container(
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: AppColors.backgroundCanvasLight,
         border: Border(top: BorderSide(color: Color(0xFFE5EAF2), width: 0.7)),
       ),
       child: BottomNavigationBar(
@@ -35,7 +35,7 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
           widget.onTap!(index);
         },
         type: BottomNavigationBarType.fixed,
-        backgroundColor: AppColors.white,
+        backgroundColor: AppColors.backgroundCanvasLight,
         elevation: 0,
 
         selectedItemColor: AppColors.actionPrimaryLight,

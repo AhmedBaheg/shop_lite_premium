@@ -11,8 +11,10 @@ class Constant {
   static const String langBox = "lang_box";
   static const String uidBox = "uid_box";
   static const String favBox = "fav_box";
+  static const String themeBox = "theme_box";
 
   static const String langKey = "language";
+  static const String themeKey = "theme";
 
   static Future<void> setUp() async {
     WidgetsFlutterBinding.ensureInitialized();
@@ -34,6 +36,9 @@ class Constant {
     }
     if (!Hive.isBoxOpen(favBox)) {
       await Hive.openBox<ProductModel>(favBox);
+    }
+    if (!Hive.isBoxOpen(themeBox)) {
+      await Hive.openBox<String>(themeBox);
     }
   }
 }

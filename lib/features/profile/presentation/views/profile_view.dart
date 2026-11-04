@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_lite_premium/core/shared_widgets/app_main_bar.dart';
 import 'package:shop_lite_premium/core/theme/app_colors.dart';
 import 'package:shop_lite_premium/core/utils/app_spacing.dart';
+import 'package:shop_lite_premium/features/appearance/presentation/views/appearance_view.dart';
 import 'package:shop_lite_premium/features/auth/data/data_sources/remote/auth_remote_data_source_impl.dart';
 import 'package:shop_lite_premium/features/auth/data/repo/auth_repo_impl.dart';
 import 'package:shop_lite_premium/features/auth/domain/use_cases/logout_use_case.dart';
@@ -112,6 +113,12 @@ class ProfileView extends StatelessWidget {
                     icon: AppStrings.appearanceIcon,
                     title: localization.profileAppearance,
                     value: localization.profileLight,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => AppearanceView()),
+                      );
+                    },
                   ),
 
                   CustomDivider(),

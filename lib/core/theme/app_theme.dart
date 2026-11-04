@@ -1,133 +1,93 @@
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 import 'app_colors.dart';
 
 abstract final class AppTheme {
-  static ThemeData get light => _build(
+  static final ThemeData lightTheme = ThemeData(
+    useMaterial3: true,
     brightness: Brightness.light,
-    canvas: AppColors.backgroundCanvasLight,
-    surface: AppColors.surfaceSubtleLight,
-    text: AppColors.textPrimaryLight,
-    secondary: AppColors.textSecondaryLight,
-    border: AppColors.borderDefaultLight,
-    primary: AppColors.actionPrimaryLight,
+    scaffoldBackgroundColor: AppColors.backgroundCanvasLight,
+
+    colorScheme: const ColorScheme.light(
+      primary: AppColors.contentAccentLight,
+      surface: AppColors.backgroundCanvasLight,
+      onSurface: AppColors.textPrimaryLight,
+    ),
+
+    appBarTheme: const AppBarTheme(
+      backgroundColor: AppColors.backgroundCanvasLight,
+      foregroundColor: AppColors.textPrimaryLight,
+      iconTheme: IconThemeData(color: AppColors.textPrimaryLight),
+      titleTextStyle: TextStyle(
+        color: AppColors.textPrimaryLight,
+        fontSize: 20,
+        fontWeight: FontWeight.w600,
+      ),
+      elevation: 0,
+    ),
+
+    textTheme: const TextTheme(
+      bodyLarge: TextStyle(color: AppColors.textPrimaryLight),
+      bodyMedium: TextStyle(color: AppColors.textPrimaryLight),
+      bodySmall: TextStyle(color: AppColors.textSecondaryLight),
+      titleLarge: TextStyle(color: AppColors.textPrimaryLight),
+      titleMedium: TextStyle(color: AppColors.textPrimaryLight),
+      titleSmall: TextStyle(color: AppColors.textPrimaryLight),
+    ),
+
+    iconTheme: const IconThemeData(
+      color: AppColors.textPrimaryLight,
+    ),
+
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: AppColors.backgroundCanvasLight,
+      selectedItemColor: AppColors.actionPrimaryLight,
+      unselectedItemColor: AppColors.textSecondaryLight,
+      type: BottomNavigationBarType.fixed,
+    ),
   );
 
-  static ThemeData get dark => _build(
+  static final ThemeData darkTheme = ThemeData(
+    useMaterial3: true,
     brightness: Brightness.dark,
-    canvas: AppColors.backgroundCanvasDark,
-    surface: AppColors.surfaceSubtleDark,
-    text: AppColors.textPrimaryDark,
-    secondary: AppColors.textSecondaryDark,
-    border: AppColors.borderDefaultDark,
-    primary: AppColors.actionPrimaryDark,
+    scaffoldBackgroundColor: AppColors.backgroundCanvasDark,
+
+    colorScheme: const ColorScheme.dark(
+      primary: AppColors.contentAccentDark,
+      surface: AppColors.backgroundCanvasDark,
+      onSurface: AppColors.textPrimaryDark,
+    ),
+
+    appBarTheme: const AppBarTheme(
+      backgroundColor: AppColors.backgroundCanvasDark,
+      foregroundColor: AppColors.textPrimaryDark,
+      iconTheme: IconThemeData(color: AppColors.textPrimaryDark),
+      titleTextStyle: TextStyle(
+        color: AppColors.textPrimaryDark,
+        fontSize: 20,
+        fontWeight: FontWeight.w600,
+      ),
+      elevation: 0,
+    ),
+
+    textTheme: const TextTheme(
+      bodyLarge: TextStyle(color: AppColors.textPrimaryDark),
+      bodyMedium: TextStyle(color: AppColors.textPrimaryDark),
+      bodySmall: TextStyle(color: AppColors.textSecondaryDark),
+      titleLarge: TextStyle(color: AppColors.textPrimaryDark),
+      titleMedium: TextStyle(color: AppColors.textPrimaryDark),
+      titleSmall: TextStyle(color: AppColors.textPrimaryDark),
+    ),
+
+    iconTheme: const IconThemeData(
+      color: AppColors.textPrimaryDark,
+    ),
+
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: AppColors.backgroundCanvasDark,
+      selectedItemColor: AppColors.contentAccentDark,
+      unselectedItemColor: AppColors.textSecondaryDark,
+      type: BottomNavigationBarType.fixed,
+    ),
   );
-
-  static ThemeData _build({
-    required Brightness brightness,
-    required Color canvas,
-    required Color surface,
-    required Color text,
-    required Color secondary,
-    required Color border,
-    required Color primary,
-  }) {
-    final scheme = ColorScheme.fromSeed(
-      seedColor: primary,
-      brightness: brightness,
-      surface: surface,
-      error: AppColors.error,
-    ).copyWith(
-      primary: primary,
-      onPrimary: Colors.white,
-      onSurface: text,
-      onSurfaceVariant: secondary,
-      outline: border,
-      outlineVariant: border,
-    );
-
-    final base = ThemeData(
-      useMaterial3: true,
-      colorScheme: scheme,
-    );
-
-    return base.copyWith(
-      scaffoldBackgroundColor: canvas,
-
-      textTheme: GoogleFonts.interTextTheme(
-        base.textTheme,
-      ).apply(
-        bodyColor: text,
-        displayColor: text,
-      ),
-
-      appBarTheme: AppBarTheme(
-        backgroundColor: canvas,
-        foregroundColor: text,
-        elevation: 0,
-        surfaceTintColor: Colors.transparent,
-      ),
-
-      cardTheme: CardThemeData(
-        color: surface,
-        elevation: 0,
-        margin: EdgeInsets.zero,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(18),
-          side: BorderSide(color: border),
-        ),
-      ),
-
-      inputDecorationTheme: InputDecorationTheme(
-        filled: true,
-        fillColor: surface,
-        contentPadding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 16,
-        ),
-        hintStyle: GoogleFonts.inter(
-          fontSize: 14,
-          color: secondary,
-        ),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(14),
-          borderSide: BorderSide(color: border),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(14),
-          borderSide: BorderSide(color: border),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(14),
-          borderSide: BorderSide(
-            color: primary,
-            width: 1.5,
-          ),
-        ),
-      ),
-
-      elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: primary,
-          foregroundColor: Colors.white,
-          minimumSize: const Size.fromHeight(52),
-          elevation: 0,
-          textStyle: GoogleFonts.inter(
-            fontSize: 15,
-            fontWeight: FontWeight.w600,
-          ),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(14),
-          ),
-        ),
-      ),
-
-      dividerTheme: DividerThemeData(
-        color: border,
-        thickness: 1,
-      ),
-    );
-  }
 }
