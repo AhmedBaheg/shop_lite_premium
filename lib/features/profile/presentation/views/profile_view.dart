@@ -9,7 +9,6 @@ import 'package:shop_lite_premium/features/auth/domain/use_cases/logout_use_case
 import 'package:shop_lite_premium/features/auth/presentation/cubits/auth_cubit.dart';
 import 'package:shop_lite_premium/features/auth/presentation/views/views/auth_parent.dart';
 
-import '../../../../core/localization/language_cubit.dart';
 import '../../../../core/shared_widgets/custom_divider.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/utils/app_strings.dart';
@@ -102,23 +101,7 @@ class ProfileView extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => LanguageView(
-                            locale: const Locale('en'),
-                            onLocaleChanged: (Locale value) {
-                              context.read<LanguageCubit>().changeLanguage(
-                                value.languageCode,
-                              );
-                            },
-                            title: localization.settingsLanguageDescription,
-                            description:
-                                localization.settingsLanguageDescription,
-                            englishTitle: localization.settingsEnglish,
-                            englishDescription: localization.settingsEnglishDescription,
-                            arabicTitle: localization.settingsArabic,
-                            arabicDescription: localization.settingsArabicDescription,
-                          ),
-                        ),
+                        MaterialPageRoute(builder: (context) => LanguageView()),
                       );
                     },
                   ),

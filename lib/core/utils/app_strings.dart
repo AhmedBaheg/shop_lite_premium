@@ -24,4 +24,6 @@ class AppStrings {
   static const String notificationIcon = "assets/icons/notification.svg";
   static const String packageIcon = "assets/icons/package.svg";
   static const String chevronRightIcon = "assets/icons/chevron-right.svg";
+  static const String egyptIcon = "assets/icons/egypt_icon.svg";
+  static const String americaIcon = "assets/icons/america_icon.svg";
 }

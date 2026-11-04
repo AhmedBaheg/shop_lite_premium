@@ -12,6 +12,8 @@ class Constant {
   static const String uidBox = "uid_box";
   static const String favBox = "fav_box";
 
+  static const String langKey = "language";
+
   static Future<void> setUp() async {
     WidgetsFlutterBinding.ensureInitialized();
     await Firebase.initializeApp(

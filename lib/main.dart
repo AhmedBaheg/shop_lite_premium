@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
-import 'package:shop_lite_premium/core/localization/language_cubit.dart';
-import 'package:shop_lite_premium/core/localization/language_storage.dart';
 import 'core/theme/app_colors.dart';
 import 'core/utils/constant.dart';
 import 'features/auth/presentation/views/views/auth_parent.dart';
 import 'features/home_view.dart';
+import 'features/language/data/data_sources/locale/language_locale_hive_data_source_impl.dart';
+import 'features/language/data/repo/language_repo_impl.dart';
+import 'features/language/domain/use_cases/change_language_use_case.dart';
+import 'features/language/domain/use_cases/get_language_use_case.dart';
+import 'features/language/presentation/cubits/language_cubit.dart';
 import 'l10n/app_localizations.dart';
 
 Future<void> main() async {
@@ -24,7 +27,18 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) =>
-              LanguageCubit(storage: LanguageStorage())..getLanguage(),
+              LanguageCubit(
+                changeLanguageUseCase: ChangeLanguageUseCase(
+                  languageRepo: LanguageRepoImpl(
+                    languageLocaleHiveDataSource: LanguageLocaleHiveDataSourceImpl(),
+                  ),
+                ),
+                getLanguageUseCase: GetLanguageUseCase(
+                  languageRepo: LanguageRepoImpl(
+                    languageLocaleHiveDataSource: LanguageLocaleHiveDataSourceImpl(),
+                  ),
+                ),
+              )..getLanguage(),
         ),
       ],
       child: BlocBuilder<LanguageCubit, LanguageState>(

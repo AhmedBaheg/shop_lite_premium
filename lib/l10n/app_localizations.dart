@@ -563,13 +563,13 @@ abstract class AppLocalizations {
   /// No description provided for @settingsArabic.
   ///
   /// In en, this message translates to:
-  /// **'Arabic'**
+  /// **'عربي'**
   String get settingsArabic;
 
   /// No description provided for @settingsArabicDescription.
   ///
   /// In en, this message translates to:
-  /// **'Use Arabic in the app'**
+  /// **'استخدم التطبيق باللغة العربية'**
   String get settingsArabicDescription;
 
   /// No description provided for @settingsAppearanceDescription.

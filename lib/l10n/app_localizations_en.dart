@@ -253,10 +253,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsEnglishDescription => 'Use English in the app';
 
   @override
-  String get settingsArabic => 'Arabic';
+  String get settingsArabic => 'عربي';
 
   @override
-  String get settingsArabicDescription => 'Use Arabic in the app';
+  String get settingsArabicDescription => 'استخدم التطبيق باللغة العربية';
 
   @override
   String get settingsAppearanceDescription =>
